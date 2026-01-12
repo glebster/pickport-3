@@ -29,6 +29,8 @@
 
 ## Универсальные поля
 
+- `action`
+- `object`
 - `title`
 - `date`
 - `tags`
@@ -79,7 +81,10 @@
 | currency      | Валюта         | select   |
 | category      | Категория      | text     |
 | subcategory   | Подкатегория   | text     |
+| action        | Действие       | text     |
 | people        | Люди           | people   |
+| person        | Персона        | text     |
+| place         | Локация        | text     |
 | placeText     | Место          | text     |
 | address       | Адрес          | text     |
 | city          | Город          | text     |
@@ -89,10 +94,18 @@
 | quantity      | Количество     | number   |
 | unit          | Единицы        | text     |
 | url           | Ссылка         | url      |
+| link          | Ссылка         | url      |
+| object        | Объект         | text     |
 | recurrence    | Повторяемость  | text     |
+| reminder      | Напоминание    | text     |
+| billingCycle  | Биллинг‑цикл   | text     |
+| interval      | Интервал       | text     |
 | distance      | Дистанция      | number   |
 | calories      | Калории        | number   |
 | duration      | Длительность   | number   |
+| tripDate      | Дата поездки   | date     |
+| targetDate    | Целевая дата   | date     |
+| validUntil    | Действует до   | date     |
 | startTime     | Начало         | time     |
 | endTime       | Окончание      | time     |
 | time          | Время          | time     |
@@ -118,11 +131,31 @@
 | mood          | Настроение     | text     |
 | weather       | Погода         | text     |
 | temperature   | Температура    | number   |
+| emotions      | Эмоции         | text     |
 | participants  | Участники      | text     |
 | project       | Проект         | text     |
+| decisions     | Решения        | text     |
+| intent        | Намерение      | text     |
+| priority      | Приоритет      | text     |
+| summary       | Конспект       | text     |
+| source        | Источник       | text     |
+| metrics       | Метрики        | json     |
 | listId        | ID списка      | text     |
+| list          | Список         | text     |
+| group         | Группа         | text     |
 | device        | Устройство     | text     |
 | context       | Контекст       | text     |
+| docType       | Тип документа  | text     |
+| medicine      | Лекарство      | text     |
+| dosage        | Дозировка      | text     |
+| schedule      | Расписание     | text     |
+| pet           | Питомец        | text     |
+| procedure     | Процедура      | text     |
+| service       | Сервис         | text     |
+| serviceType   | Тип сервиса    | text     |
+| mileage       | Пробег         | number   |
+| goalAmount    | Целевая сумма  | money    |
+| currentAmount | Текущая сумма  | money    |
 | jsonField     | Тех. JSON      | json     |
 | numberField   | Числовое поле  | number   |
 
@@ -130,5 +163,6 @@
 
 1. Пользователь может **удалить любое предложенное поле**.
 2. Поля добавляются **динамически**, на основе рецепта.
-3. Пустые поля не хранятся (чтобы не плодить шум).
-4. Поля можно **сворачивать/разворачивать**, чтобы не перегружать карточку (mobile‑first).
+3. При добавлении дополнительных полей UI предлагает **релевантные группы** (финансы, люди/место, планы, здоровье и т.д.), чтобы ИИ мог быстро подставить подходящий набор, а не россыпь одиночных полей.
+4. Пустые поля не хранятся (чтобы не плодить шум).
+5. Поля можно **сворачивать/разворачивать**, чтобы не перегружать карточку (mobile‑first).
