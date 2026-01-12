@@ -12,6 +12,8 @@
 - в некоторых сценариях: `placeText` (если событие связано с конкретным местом)
 
 Запись не сохраняется, если обязательные поля пусты.
+`title` может быть сформирован автоматически (из `action + object` и ключевых слов), но пользователь должен иметь возможность быстро поправить его перед сохранением.
+`date` по умолчанию ставится текущая, но в сценариях «в прошлом/в будущем» пользователь может выбрать точную или приблизительную дату.
 
 ### 2) Основные (рекомендуемые)
 Обычно ожидаются для конкретной категории.
@@ -62,8 +64,71 @@
 
 Контекстные поля доступны во всех категориях, но реально отображаются и заполняются только если подходят сценарию.
 
+## Типы полей (FieldId → Type)
+
+Таблица фиксирует ожидаемый `type` для каждого `FieldId` и служит опорой для UI‑рендера и валидаторов.
+
+| FieldId       | Label          | Type     |
+| ------------- | -------------- | -------- |
+| title         | Название       | text     |
+| date          | Дата           | date     |
+| tags          | Теги           | tags     |
+| note          | Описание       | textarea |
+| attachments   | Вложения       | json     |
+| amount        | Сумма          | money    |
+| currency      | Валюта         | select   |
+| category      | Категория      | text     |
+| subcategory   | Подкатегория   | text     |
+| people        | Люди           | people   |
+| placeText     | Место          | text     |
+| address       | Адрес          | text     |
+| city          | Город          | text     |
+| country       | Страна         | text     |
+| geo           | Координаты     | geo      |
+| rating        | Оценка         | number   |
+| quantity      | Количество     | number   |
+| unit          | Единицы        | text     |
+| url           | Ссылка         | url      |
+| recurrence    | Повторяемость  | text     |
+| distance      | Дистанция      | number   |
+| calories      | Калории        | number   |
+| duration      | Длительность   | number   |
+| startTime     | Начало         | time     |
+| endTime       | Окончание      | time     |
+| time          | Время          | time     |
+| region        | Регион         | text     |
+| zip           | Индекс         | text     |
+| street        | Улица          | text     |
+| building      | Дом            | text     |
+| apartment     | Квартира       | text     |
+| merchant      | Мерчант        | text     |
+| store         | Магазин        | text     |
+| cardLast4     | Карта (посл.4) | text     |
+| iban          | IBAN           | text     |
+| account       | Счёт           | text     |
+| invoice       | Счёт/инвойс    | text     |
+| billId        | Счёт/чек ID    | text     |
+| receiptNumber | Номер чека     | text     |
+| orderId       | ID заказа      | text     |
+| phone         | Телефон        | text     |
+| email         | Email          | text     |
+| website       | Сайт           | url      |
+| table         | Стол           | text     |
+| seat          | Место          | text     |
+| mood          | Настроение     | text     |
+| weather       | Погода         | text     |
+| temperature   | Температура    | number   |
+| participants  | Участники      | text     |
+| project       | Проект         | text     |
+| listId        | ID списка      | text     |
+| device        | Устройство     | text     |
+| context       | Контекст       | text     |
+| jsonField     | Тех. JSON      | json     |
+| numberField   | Числовое поле  | number   |
+
 ## Правила работы с полями
 
 1. Пользователь может **удалить любое предложенное поле**.
 2. Поля добавляются **динамически**, на основе рецепта.
 3. Пустые поля не хранятся (чтобы не плодить шум).
+4. Поля можно **сворачивать/разворачивать**, чтобы не перегружать карточку (mobile‑first).
