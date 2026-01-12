@@ -15,6 +15,7 @@
 9. **[08-mvp-roadmap.md](08-mvp-roadmap.md)** — MVP и развитие.
 10. **[09-risks-open-questions.md](09-risks-open-questions.md)** — узкие места и открытые вопросы.
 11. **[10-best-practices.md](10-best-practices.md)** — best practices для mobile‑first PWA.
+12. **[11-screens.md](11-screens.md)** — обзор экранов по скриншотам.
 
 ## Принципы оформления
 
