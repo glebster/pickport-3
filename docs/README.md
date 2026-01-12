@@ -16,6 +16,9 @@
 10. **[09-risks-open-questions.md](09-risks-open-questions.md)** — узкие места и открытые вопросы.
 11. **[10-best-practices.md](10-best-practices.md)** — best practices для mobile‑first PWA.
 12. **[11-screens.md](11-screens.md)** — обзор экранов по скриншотам.
+13. **[12-security.md](12-security.md)** — безопасность и приватность.
+14. **[13-monetization.md](13-monetization.md)** — монетизация.
+15. **[14-entities.md](14-entities.md)** — основные сущности простыми словами.
 
 ## Принципы оформления
 
