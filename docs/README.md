@@ -10,7 +10,7 @@
 4. **[03-entry-fields.md](03-entry-fields.md)** — поля записей и правила заполнения.
 5. **[04-ux-flows.md](04-ux-flows.md)** — ключевые UX‑потоки добавления и подтверждения.
 6. **[05-ui-routes.md](05-ui-routes.md)** — экраны, маршруты и навигация.
-7. **[06-architecture.md](06-architecture.md)** — общая архитектура FastAPI + Svelte 5 + PWA.
+7. **[06-architecture.md](06-architecture.md)** — общая архитектура local‑first PWA + FastAPI.
 8. **[07-ai-search-reminders.md](07-ai-search-reminders.md)** — роль ИИ, поиск и напоминания.
 9. **[08-mvp-roadmap.md](08-mvp-roadmap.md)** — MVP и развитие.
 10. **[09-risks-open-questions.md](09-risks-open-questions.md)** — узкие места и открытые вопросы.
@@ -20,9 +20,10 @@
 14. **[13-monetization.md](13-monetization.md)** — монетизация.
 15. **[14-entities.md](14-entities.md)** — основные сущности простыми словами.
 16. **[15-use-cases.md](15-use-cases.md)** — подробные сценарии использования.
-17. **[17-new-wizard-tz.md](17-new-wizard-tz.md)** — ТЗ на экран `/new` (2‑этапный визард).
-18. **[18-storage-model.md](18-storage-model.md)** — модель хранения: локальная база и облачный контур.
-18. **[18-list-concept.md](18-list-concept.md)** — концепция сущности List и best practices.
+17. **[16-analogues.md](16-analogues.md)** — аналоги и референсы.
+18. **[17-new-wizard-tz.md](17-new-wizard-tz.md)** — ТЗ на экран `/new` (2‑этапный визард).
+19. **[18-storage-model.md](18-storage-model.md)** — модель хранения: локальная база и облачный контур.
+20. **[19-list-concept.md](19-list-concept.md)** — концепция сущности List и best practices.
 
 ## Принципы оформления
 
