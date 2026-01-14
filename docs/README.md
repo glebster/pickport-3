@@ -21,6 +21,7 @@
 15. **[14-entities.md](14-entities.md)** — основные сущности простыми словами.
 16. **[15-use-cases.md](15-use-cases.md)** — подробные сценарии использования.
 17. **[17-new-wizard-tz.md](17-new-wizard-tz.md)** — ТЗ на экран `/new` (2‑этапный визард).
+18. **[18-list-concept.md](18-list-concept.md)** — концепция сущности List и best practices.
 
 ## Принципы оформления
 
