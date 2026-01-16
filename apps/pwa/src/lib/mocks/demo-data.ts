@@ -1,0 +1,240 @@
+export type EntryMock = {
+	id: string;
+	title: string;
+	type: 'note' | 'visit' | 'list' | 'debt' | 'reminder';
+	summary: string;
+	category?: string;
+	subcategory?: string;
+	categoryLabel?: string;
+	subcategoryLabel?: string;
+	amount?: number;
+	currency?: '₽' | '$';
+	tags?: string[];
+	date: string;
+	time?: string;
+	listId?: string;
+	mood?: 'positive' | 'neutral' | 'negative';
+	confidence?: 'high' | 'medium' | 'low';
+	status: 'draft' | 'ready' | 'synced';
+	source?: 'text' | 'voice' | 'photo' | 'import';
+	attachments?: number;
+};
+
+export type ListMock = {
+	id: string;
+	title: string;
+	summary?: string;
+	total?: number;
+	currency?: '₽' | '$';
+	entriesCount: number;
+	tags?: string[];
+	date: string;
+	source?: string;
+	confidence?: 'high' | 'medium' | 'low';
+	status: 'draft' | 'ready' | 'synced';
+};
+
+export type ReminderMock = {
+	id: string;
+	title: string;
+	due: string;
+	context: string;
+	listId?: string;
+};
+
+export const heroState = {
+	inbox: 3,
+	drafts: 2,
+	offline: true,
+	lastSync: '12:45',
+	aiPending: 1
+};
+
+export const demoLists: ListMock[] = [
+	{
+		id: 'list-grocery',
+		title: 'Перекрёсток, 12 янв',
+		summary: '12 позиций, 2 450 ₽',
+		total: 2450,
+		currency: '₽',
+		entriesCount: 12,
+		tags: ['чек', 'еда'],
+		date: '2026-01-12',
+		source: 'photo',
+		confidence: 'medium',
+		status: 'draft'
+	},
+	{
+		id: 'list-pizza',
+		title: 'Пиццерия на Арбате',
+		summary: 'Ужин втроём, долги разделены',
+		total: 3200,
+		currency: '₽',
+		entriesCount: 3,
+		tags: ['питание', 'долги'],
+		date: '2026-01-10',
+		source: 'voice',
+		confidence: 'high',
+		status: 'ready'
+	},
+	{
+		id: 'list-trip',
+		title: 'Поездка в Тулу',
+		summary: 'Билеты, кофе, парковка',
+		total: 4100,
+		currency: '₽',
+		entriesCount: 4,
+		tags: ['путешествие'],
+		date: '2026-01-05',
+		source: 'text',
+		confidence: 'low',
+		status: 'draft'
+	}
+];
+
+export const demoEntries: EntryMock[] = [
+	{
+		id: 'e-101',
+		title: 'Чек из Перекрёстка',
+		type: 'list',
+		summary: '12 позиций, 2 450 ₽ · AI черновик',
+		category: 'food',
+		subcategory: 'buy',
+		categoryLabel: 'Еда',
+		subcategoryLabel: 'Купил',
+		amount: 2450,
+		currency: '₽',
+		tags: ['еда', 'чек'],
+		date: '2026-01-12',
+		time: '18:20',
+		listId: 'list-grocery',
+		mood: 'neutral',
+		confidence: 'medium',
+		status: 'draft',
+		source: 'photo',
+		attachments: 2
+	},
+	{
+		id: 'e-102',
+		title: 'Долг за ужин — Олег',
+		type: 'debt',
+		summary: 'Олегу 100 ₽, напомнить 15 янв',
+		category: 'money',
+		subcategory: 'lend',
+		categoryLabel: 'Деньги',
+		subcategoryLabel: 'Одолжил',
+		amount: 100,
+		currency: '₽',
+		tags: ['долги', 'ужин'],
+		date: '2026-01-10',
+		time: '21:10',
+		listId: 'list-pizza',
+		mood: 'neutral',
+		confidence: 'high',
+		status: 'ready',
+		source: 'voice'
+	},
+	{
+		id: 'e-103',
+		title: 'Записать эмоцию после встречи',
+		type: 'note',
+		summary: 'Чувствовал спокойствие, 2 тега, без суммы',
+		category: 'experience',
+		subcategory: 'feel',
+		categoryLabel: 'Опыт',
+		subcategoryLabel: 'Пережил',
+		tags: ['эмоции', 'заметка'],
+		date: '2026-01-11',
+		time: '14:05',
+		mood: 'positive',
+		confidence: 'high',
+		status: 'ready',
+		source: 'text'
+	},
+	{
+		id: 'e-104',
+		title: 'Позвонить стоматологу',
+		type: 'reminder',
+		summary: 'Нужен слот до 20 янв · уведомление включено',
+		category: 'services',
+		subcategory: 'plan',
+		categoryLabel: 'Услуги',
+		subcategoryLabel: 'Планирую',
+		date: '2026-01-09',
+		time: '09:00',
+		tags: ['здоровье', 'напоминание'],
+		mood: 'neutral',
+		confidence: 'low',
+		status: 'draft',
+		source: 'import'
+	},
+	{
+		id: 'e-105',
+		title: 'Кофе на вокзале',
+		type: 'visit',
+		summary: '320 ₽, оплата картой · чек в приложении',
+		category: 'places',
+		subcategory: 'visit',
+		categoryLabel: 'Места',
+		subcategoryLabel: 'Посетил',
+		amount: 320,
+		currency: '₽',
+		tags: ['путешествие'],
+		date: '2026-01-05',
+		time: '07:40',
+		listId: 'list-trip',
+		mood: 'neutral',
+		confidence: 'medium',
+		status: 'synced',
+		source: 'text'
+	},
+	{
+		id: 'e-106',
+		title: 'Сок и хлеб (тот же чек)',
+		type: 'visit',
+		summary: 'Сок 180 ₽, хлеб 60 ₽',
+		category: 'food',
+		subcategory: 'buy',
+		categoryLabel: 'Еда',
+		subcategoryLabel: 'Купил',
+		amount: 240,
+		currency: '₽',
+		tags: ['еда', 'чек'],
+		date: '2026-01-12',
+		time: '18:22',
+		listId: 'list-grocery',
+		mood: 'neutral',
+		confidence: 'medium',
+		status: 'draft',
+		source: 'photo'
+	}
+];
+
+export const demoReminders: ReminderMock[] = [
+	{
+		id: 'r-1',
+		title: 'Перепроверить чек: молоко/сыр',
+		due: 'Сегодня, 20:00',
+		context: 'list-grocery'
+	},
+	{
+		id: 'r-2',
+		title: 'Подтвердить долги по ужину',
+		due: 'Завтра, 10:00',
+		context: 'list-pizza'
+	},
+	{
+		id: 'r-3',
+		title: 'Выбрать дату для стоматолога',
+		due: 'До 20 янв',
+		context: 'e-104'
+	}
+];
+
+export const quickSources = [
+	{ id: 'text', label: 'Текст', hint: 'быстрое поле', accent: 'text' },
+	{ id: 'voice', label: 'Голос', hint: '~30 сек', accent: 'voice' },
+	{ id: 'photo', label: 'Фото/скан', hint: 'чек/док', accent: 'photo' },
+	{ id: 'file', label: 'Файл/URL', hint: 'pdf/csv', accent: 'file' }
+];
+
